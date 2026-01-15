@@ -1,43 +1,20 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <QPage padding>
+    <QList class="row">
+      <div v-for="i in 50" :key="i" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <!-- <QCard> -->
+        <QItem v-ripple clickable class="">
+          <QItemSection avatar>
+            <QIcon color="primary" name="bluetooth" />
+          </QItemSection>
+
+          <QItemSection>
+            <QItemLabel>({{ i }})Icon as avatar</QItemLabel>
+            <QItemLabel caption>JSON 格式化</QItemLabel>
+          </QItemSection>
+        </QItem>
+        <!-- </QCard> -->
+      </div>
+    </QList>
+  </QPage>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue';
-import type { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
-
-const meta = ref<Meta>({
-  totalCount: 1200
-});
-</script>

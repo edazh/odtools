@@ -1,102 +1,52 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <QLayout view="hHh Lpr lFf">
+    <QHeader elevated>
+      <QToolbar>
+        <QBtn flat dense round icon="menu" aria-label="Menu" @click="toggleMiniState" />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <QToolbarTitle> Quasar App </QToolbarTitle>
 
         <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
+      </QToolbar>
+    </QHeader>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+    <QDrawer v-model="drawerOpened" :mini="miniState" show-if-above bordered>
+      <QList>
+        <QItem to="/">
+          <QItemSection avatar>
+            <QIcon name="mdi-home" />
+          </QItemSection>
+          <QItemSection>全部工具</QItemSection>
+        </QItem>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+        <QItem v-for="tool in toolsStore.tools" :key="tool.path" :to="tool.path">
+          <QItemSection avatar>
+            <QIcon :name="tool.icon" />
+          </QItemSection>
+          <QItemSection>{{ tool.label }}</QItemSection>
+        </QItem>
+      </QList>
+    </QDrawer>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+    <QPageContainer>
+      <RouterView />
+    </QPageContainer>
+  </QLayout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
+import { useToolsStore } from '@/stores/tools'
+import { useQuasar } from 'quasar'
+const miniState = ref(true)
+const drawerOpened = ref(true)
+const toolsStore = useToolsStore()
+const $q = useQuasar()
 
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+function toggleMiniState() {
+  if ($q.screen.lt.md) {
+    drawerOpened.value = !drawerOpened.value
+  } else {
+    miniState.value = !miniState.value
   }
-];
-
-const leftDrawerOpen = ref(false);
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
