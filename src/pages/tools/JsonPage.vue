@@ -1,9 +1,9 @@
 <template>
   <QPage class="column" padding>
     <div class="header q-gutter-sm">
-      <QBtn size="sm" color="primary" outline label="Format" @click="formatDocument" />
       <QBtn size="sm" color="primary" outline label="转义" @click="escape" />
       <QBtn size="sm" color="primary" outline label="去转义" @click="unescape" />
+      <QBtn size="sm" color="primary" outline label="格式化" @click="formatDocument" />
     </div>
 
     <QSeparator class="q-my-md" />

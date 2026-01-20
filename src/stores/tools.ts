@@ -6,9 +6,14 @@ export const useToolsStore = defineStore('tools', function () {
       icon: 'mdi-code-json',
     },
     {
-      label: 'Base64 编解码',
-      path: '/tools/base64',
-      icon: 'mdi-alpha-b',
+      label: 'Base64 文本',
+      path: '/tools/base64-text',
+      icon: 'mdi-text',
+    },
+    {
+      label: 'Base64 图片',
+      path: '/tools/base64-img',
+      icon: 'mdi-image',
     },
     {
       label: '随机密码',

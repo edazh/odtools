@@ -49,6 +49,7 @@ onMounted(() => {
   myEditor = monaco.editor.create(editorRef.value, {
     model,
     minimap: { enabled: false },
+    ...props.options,
   })
 
   myEditor.onDidChangeModelContent(() => {

@@ -12,7 +12,8 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: 'json', component: () => import('pages/tools/JsonPage.vue') },
-      { path: 'base64', component: () => import('pages/tools/Base64Page.vue') },
+      { path: 'base64-text', component: () => import('pages/tools/Base64TextPage.vue') },
+      { path: 'base64-img', component: () => import('pages/tools/Base64ImgPage.vue') },
       { path: 'password', component: () => import('pages/tools/PasswordPage.vue') },
     ],
   },
