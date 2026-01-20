@@ -64,7 +64,9 @@ export default defineConfig((ctx) => {
       // polyfillModulePreload: true,
       // distDir
 
-      // extendViteConf (viteConf) {},
+      // extendViteConf(viteConf) {
+      //   viteConf.optimizeDeps?.exclude?.push('')
+      // },
       // viteVuePluginOptions: {},
 
       vitePlugins: [
@@ -103,6 +105,8 @@ export default defineConfig((ctx) => {
             imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
           },
         ],
+
+        ['vite-plugin-vue-devtools'],
       ],
     },
 

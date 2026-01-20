@@ -40,10 +40,12 @@
     "globals": "^16.4.0",
     "licia-es": "^1.48.0",
     "monaco-editor": "^0.55.1",
+    "monaco-editor-vue3": "^1.0.5",
     "prettier": "^3.3.3",
     "typescript": "^5.9.2",
     "unplugin-auto-import": "^21.0.0",
     "vite-plugin-checker": "^0.11.0",
+    "vite-plugin-vue-devtools": "^8.0.5",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.0.7"
   },

@@ -7,6 +7,16 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
 
+  {
+    path: '/tools',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: 'json', component: () => import('pages/tools/JsonPage.vue') },
+      { path: 'base64', component: () => import('pages/tools/Base64Page.vue') },
+      { path: 'password', component: () => import('pages/tools/PasswordPage.vue') },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
