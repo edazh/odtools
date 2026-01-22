@@ -31,7 +31,7 @@ const imgSrc = ref('')
 async function handlePickFile() {
   const [file] = await openFile({ accept: 'image/*' })
   if (!file) return
-  fileToBase64(file)
+  await fileToBase64(file)
 }
 
 async function handleDrop(event: DragEvent) {
@@ -41,7 +41,7 @@ async function handleDrop(event: DragEvent) {
   if (!files) return
   const file = files.item(0)
   if (!file) return
-  fileToBase64(file)
+  await fileToBase64(file)
 }
 
 async function fileToBase64(file: File) {
