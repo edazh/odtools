@@ -20,6 +20,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/password',
       icon: 'mdi-key',
     },
+    {
+      label: 'UUID',
+      path: '/tools/uuid',
+      icon: 'mdi-identifier',
+    },
   ])
 
   return {
