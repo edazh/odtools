@@ -16,6 +16,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'base64-img', component: () => import('pages/tools/Base64ImgPage.vue') },
       { path: 'password', component: () => import('pages/tools/PasswordPage.vue') },
       { path: 'uuid', component: () => import('pages/tools/UuidPage.vue') },
+      { path: 'decimal', component: () => import('pages/tools/DecimalPage.vue') },
     ],
   },
 

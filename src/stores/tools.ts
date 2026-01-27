@@ -25,6 +25,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/uuid',
       icon: 'mdi-identifier',
     },
+    {
+      label: '进制转换',
+      path: '/tools/decimal',
+      icon: 'mdi-decimal',
+    },
   ])
 
   return {
