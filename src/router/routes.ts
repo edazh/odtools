@@ -17,6 +17,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'password', component: () => import('pages/tools/PasswordPage.vue') },
       { path: 'uuid', component: () => import('pages/tools/UuidPage.vue') },
       { path: 'decimal', component: () => import('pages/tools/DecimalPage.vue') },
+      { path: 'url-encode', component: () => import('pages/tools/UrlEncodePage.vue') },
     ],
   },
 

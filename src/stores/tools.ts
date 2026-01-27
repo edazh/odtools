@@ -30,6 +30,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/decimal',
       icon: 'mdi-decimal',
     },
+    {
+      label: 'URL 编解码',
+      path: '/tools/url-encode',
+      icon: 'mdi-link',
+    },
   ])
 
   return {
