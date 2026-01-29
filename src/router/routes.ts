@@ -18,6 +18,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'uuid', component: () => import('pages/tools/UuidPage.vue') },
       { path: 'decimal', component: () => import('pages/tools/DecimalPage.vue') },
       { path: 'url-encode', component: () => import('pages/tools/UrlEncodePage.vue') },
+      { path: 'datetime', component: () => import('pages/tools/DatetimePage.vue') },
     ],
   },
 

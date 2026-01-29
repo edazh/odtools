@@ -35,6 +35,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/url-encode',
       icon: 'mdi-link',
     },
+    {
+      label: '时间日期转换',
+      path: '/tools/datetime',
+      icon: 'mdi-clock-outline',
+    },
   ])
 
   return {
