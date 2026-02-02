@@ -36,6 +36,11 @@ export const useToolsStore = defineStore('tools', function () {
       icon: 'mdi-link',
     },
     {
+      label: 'URL 解析',
+      path: '/tools/url-parse',
+      icon: 'mdi-link',
+    },
+    {
       label: '时间日期转换',
       path: '/tools/datetime',
       icon: 'mdi-clock-outline',
