@@ -20,6 +20,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'url-encode', component: () => import('pages/tools/UrlEncodePage.vue') },
       { path: 'url-parse', component: () => import('pages/tools/UrlParsePage.vue') },
       { path: 'datetime', component: () => import('pages/tools/DatetimePage.vue') },
+      { path: 'color-parse', component: () => import('pages/tools/ColorParsePage.vue') },
     ],
   },
 

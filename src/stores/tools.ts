@@ -45,6 +45,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/datetime',
       icon: 'mdi-clock-outline',
     },
+    {
+      label: '颜色转换',
+      path: '/tools/color-parse',
+      icon: 'mdi-palette',
+    },
   ])
 
   return {
