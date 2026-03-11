@@ -1,6 +1,6 @@
-# Quasar App (odt-quasar)
+# ODTool
 
-A Quasar Project
+Open source Tool for Developers.
 
 ## Install the dependencies
 
