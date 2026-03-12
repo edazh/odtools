@@ -1,6 +1,6 @@
 # 这里是一个示例 .cnb.yml
   # 匹配master分支
-  master:
+  $:
     # 触发事件为 tag_push 事件
     tag_push:
       - docker:
