@@ -18,6 +18,7 @@
     "dev:web": "quasar dev",
     "build:web": "quasar build",
     "build": "quasar build -m electron",
+    "build:electron-wl": "electron-builder -wl",
     "postinstall": "quasar prepare"
   },
   "dependencies": {

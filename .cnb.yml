@@ -18,8 +18,8 @@
 
           - name: build electron
             script: yarn build --skip-pkg --publish never
-          - name: build electron
-            script: npx electron-builder -wl --publish never
+          - name: package electron
+            script: yarn build:electron-wl
 
           - name: changelog
             image: cnbcool/changelog
