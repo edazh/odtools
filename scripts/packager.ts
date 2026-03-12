@@ -4,7 +4,7 @@ import pkg from '../package.json'
 
 export function createPackagerOptions(): Omit<Options, 'dir' | 'out'> {
   return {
-    platform: 'all',
+    platform: ['win32', 'linux'],
     afterComplete: [
       (buildPath: string, _: string, platform: string) => {
         console.log('buildPath: ', buildPath, platform)

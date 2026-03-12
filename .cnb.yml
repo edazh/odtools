@@ -17,9 +17,9 @@
             script: yarn lint
 
           - name: build electron
-            script: yarn build --publish never
+            script: yarn build --skip-pkg --publish never
           - name: build electron
-            script: npx electron-builder -w --x64 --publish never
+            script: npx electron-builder -wl --publish never
 
           - name: changelog
             image: cnbcool/changelog

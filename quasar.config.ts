@@ -3,8 +3,8 @@
 
 import { defineConfig } from '#q-app/wrappers'
 import { fileURLToPath } from 'node:url'
-// import { createBuilderOptions } from './scripts/builder'
-import { createPackagerOptions } from './scripts/packager'
+import { createBuilderOptions } from './scripts/builder'
+// import { createPackagerOptions } from './scripts/packager'
 
 export default defineConfig((ctx) => {
   return {
@@ -215,8 +215,8 @@ export default defineConfig((ctx) => {
       // specify the debugging port to use for the Electron app when running in development mode
       inspectPort: 5858,
 
-      bundler: 'packager', // 'packager' or 'builder'
-      packager: createPackagerOptions(),
+      bundler: 'builder', // 'packager' or 'builder'
+      // packager: createPackagerOptions(),
       // packager: {
       //   // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
       //   // OS X / Mac App Store
@@ -228,7 +228,7 @@ export default defineConfig((ctx) => {
       //   // win32metadata: { ... }
       // },
 
-      // builder: createBuilderOptions(),
+      builder: createBuilderOptions(),
       // builder: {
       //   // https://www.electron.build/configuration/configuration
 

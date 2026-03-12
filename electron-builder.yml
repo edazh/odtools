@@ -1,0 +1,27 @@
+appId: com.edazh.odtool
+productName: ODTool
+icon: src-electron/icons/icon
+directories:
+  buildResources: src-electron
+  app: dist/electron/UnPackaged
+  output: dist/electron/Packaged
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch: universal
+
+linux:
+  target:
+    - AppImage
+    - snap
+    - deb
+  maintainer: github.com/edazh
+  category: Utility
