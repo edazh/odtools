@@ -38,5 +38,11 @@
                 - "./dist/electron/Packaged/*.yaml"
                 - "./dist/electron/Packaged/*.blockmap"
                 - "./dist/electron/Packaged/*.exe"
+            script: |
+              echo "release 上传附件"
+              ls .
+              ls ./dist
+              ls ./dist/electron
+              ls ./dist/electron/Packaged
   
   # 更多资料见 https://docs.cnb.cool/build/quick-start.html
