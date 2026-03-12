@@ -1,24 +1,42 @@
 # 这里是一个示例 .cnb.yml
   # 匹配master分支
   master:
-    # 触发事件为push事件
-    push:
+    # 触发事件为 tag_push 事件
+    tag_push:
       - docker:
-         image: electronuserland/builder:wine
+         image: electronuserland/builder:22-wine
           #volumes缓存：https://docs.cnb.cool/zh/grammar/pipeline.html#volumes
-        #  volumes:
-        #   # 使用缓存，同时更新
-        #   - /root/.yarn:cow
+         volumes:
+          # 使用缓存，同时更新
+          - /usr/local/share/.cache/yarn/v6:cow
         stages:
           - name: 安装依赖
-            script: |
-              yarn cache dir
-              yarn install --frozen-lockfile
+            script: yarn install --frozen-lockfile
 
           - name: lint
             script: yarn lint
 
           - name: build electron
-            script: yarn build
+            script: yarn build --P never
+
+          - name: changelog
+            image: cnbcool/changelog
+            settings:
+              latestChangeLogTarget: LATEST_CHANGELOG.md
+
+          - name: upload release
+            type: git:release
+            options:
+              title: release
+              descriptionFromFile: LATEST_CHANGELOG.md
+          - name: release 上传附件
+            image: cnbcool/attachments:latest
+            settings:
+              attachments:
+                - "./dist/electron/Packaged/*.zip"
+                - "./dist/electron/Packaged/*.dmg"
+                - "./dist/electron/Packaged/*.yaml"
+                - "./dist/electron/Packaged/*.blockmap"
+                - "./dist/electron/Packaged/*.exe"
   
   # 更多资料见 https://docs.cnb.cool/build/quick-start.html
