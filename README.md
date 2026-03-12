@@ -2,6 +2,19 @@
 
 Open source Tool for Developers.
 
+## by CI
+
+```bash
+# don't read or generate a lockfile
+yarn install --no-lockfile
+
+# don't generate a lockfile
+yarn install --pure-lockfile
+
+# don't generate a lockfile and fail if an update is needed
+yarn install --frozen-lockfile
+```
+
 ## Install the dependencies
 
 ```bash
