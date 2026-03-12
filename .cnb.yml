@@ -1,0 +1,24 @@
+# 这里是一个示例 .cnb.yml
+  # 匹配master分支
+  master:
+    # 触发事件为push事件
+    push:
+      - docker:
+         image: electronuserland/builder:wine
+          #volumes缓存：https://docs.cnb.cool/zh/grammar/pipeline.html#volumes
+        #  volumes:
+        #   # 使用缓存，同时更新
+        #   - /root/.yarn:cow
+        stages:
+          - name: 安装依赖
+            script: |
+              yarn cache dir
+              yarn install --frozen-lockfile
+
+          - name: lint
+            script: yarn lint
+
+          - name: build electron
+            script: yarn build
+  
+  # 更多资料见 https://docs.cnb.cool/build/quick-start.html
