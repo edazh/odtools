@@ -27,3 +27,23 @@
  *   }
  * }
  */
+
+import { contextBridge, ipcRenderer } from 'electron'
+
+const electronApi = {
+  getAppVersion: (): Promise<string> => ipcRenderer.invoke('app:get-version'),
+}
+
+if (process.contextIsolated) {
+  contextBridge.exposeInMainWorld('$electronApi', electronApi)
+} else {
+  window.$electronApi = electronApi
+}
+
+export type ElectronApi = typeof electronApi
+
+declare global {
+  interface Window {
+    $electronApi: ElectronApi
+  }
+}

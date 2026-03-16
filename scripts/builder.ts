@@ -9,14 +9,10 @@ export function createBuilderOptions(): Configuration {
     },
 
     nsis: {
-      artifactName: '${name}-${arch}-${channel}.${ext}',
+      artifactName: '${name}-${version}-${arch}-${channel}.${ext}',
     },
 
     mac: {
-      target: {
-        target: 'dmg',
-        arch: 'universal',
-      },
       category: 'public.app-category.developer-tools',
     },
 

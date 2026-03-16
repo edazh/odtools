@@ -6,7 +6,7 @@
 
         <QToolbarTitle> Quasar App </QToolbarTitle>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>v{{ appVersion }}</div>
       </QToolbar>
     </QHeader>
 
@@ -39,6 +39,7 @@ import { useToolsStore } from '@/stores/tools'
 import { useQuasar } from 'quasar'
 const miniState = ref(true)
 const drawerOpened = ref(true)
+const appVersion = ref('')
 const toolsStore = useToolsStore()
 const $q = useQuasar()
 
@@ -49,4 +50,10 @@ function toggleMiniState() {
     miniState.value = !miniState.value
   }
 }
+
+onMounted(async () => {
+  appVersion.value = await window.$electronApi.getAppVersion()
+
+  console.log('appVersion.value: ', appVersion.value);
+})
 </script>

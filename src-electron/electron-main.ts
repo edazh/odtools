@@ -53,7 +53,10 @@ async function createWindow() {
   })
 }
 
-void app.whenReady().then(createWindow)
+void app
+  .whenReady()
+  .then(createWindow)
+  .then(() => import('./api/updater'))
 
 app.on('window-all-closed', () => {
   if (platform !== 'darwin') {
