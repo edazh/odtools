@@ -4,7 +4,7 @@
       <QToolbar>
         <QBtn flat dense round icon="menu" aria-label="Menu" @click="toggleMiniState" />
 
-        <QToolbarTitle> Quasar App </QToolbarTitle>
+        <QToolbarTitle> ODTool </QToolbarTitle>
 
         <div>v{{ appVersion }}</div>
       </QToolbar>
@@ -38,7 +38,7 @@
 import { useToolsStore } from '@/stores/tools'
 import { useQuasar } from 'quasar'
 const miniState = ref(true)
-const drawerOpened = ref(true)
+const drawerOpened = ref(false)
 const appVersion = ref('')
 const toolsStore = useToolsStore()
 const $q = useQuasar()

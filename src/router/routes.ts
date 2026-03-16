@@ -21,6 +21,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'url-parse', component: () => import('pages/tools/UrlParsePage.vue') },
       { path: 'datetime', component: () => import('pages/tools/DatetimePage.vue') },
       { path: 'color-parse', component: () => import('pages/tools/ColorParsePage.vue') },
+      { path: 'jwt', component: () => import('pages/tools/JwtPage.vue') },
     ],
   },
 

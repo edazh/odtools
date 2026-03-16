@@ -50,6 +50,11 @@ export const useToolsStore = defineStore('tools', function () {
       path: '/tools/color-parse',
       icon: 'mdi-palette',
     },
+    {
+      label: 'JWT',
+      path: '/tools/jwt',
+      icon: 'mdi-alpha-j-box-outline',
+    },
   ])
 
   return {

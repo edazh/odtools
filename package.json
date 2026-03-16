@@ -48,6 +48,7 @@
     "eslint": "^9.14.0",
     "eslint-plugin-vue": "^10.4.0",
     "globals": "^16.4.0",
+    "jose": "^6.2.1",
     "licia-es": "^1.48.0",
     "monaco-editor": "^0.55.1",
     "monaco-editor-vue3": "^1.0.5",
