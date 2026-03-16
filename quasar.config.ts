@@ -4,7 +4,6 @@
 import { defineConfig } from '#q-app/wrappers'
 import { fileURLToPath } from 'node:url'
 import { createBuilderOptions } from './scripts/builder'
-// import { createPackagerOptions } from './scripts/packager'
 
 export default defineConfig((ctx) => {
   return {
@@ -216,24 +215,12 @@ export default defineConfig((ctx) => {
       inspectPort: 5858,
 
       bundler: 'builder', // 'packager' or 'builder'
-      // packager: createPackagerOptions(),
-      // packager: {
-      //   // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-      //   // OS X / Mac App Store
-      //   appBundleId: 'com.edazh.odtool',
-      //   // appCategoryType: '',
-      //   // osxSign: '',
-      //   // protocol: 'myapp://path',
-      //   // Windows only
-      //   // win32metadata: { ... }
-      // },
 
+      // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+      packager: {},
+
+      // https://www.electron.build/configuration/configuration
       builder: createBuilderOptions(),
-      // builder: {
-      //   // https://www.electron.build/configuration/configuration
-
-      //   appId: 'com.edazh.odtool',
-      // },
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex
